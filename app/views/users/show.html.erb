@@ -1,8 +1,18 @@
 <% content_for :title do %>
   <div class="clearfix profile_bar">
-    <div class="profile_name"><%= @user.name %>のページ</div>
+    <div class="profile_name"><%= @user.name %>のページ
+    <div class="profile_icon">
+      <% if @user.image.present? %>
+       <p><%= image_tag(@user.image.url, :size => "50x50") %></p>
+      <% else %>
+       <p><%= image_tag("default.png", :size => "50x50") %></p>
+      <% end %>
+    </div>
+    </div>
   </div>
+
 <% end %>
+
 <div class="profile_content">
   <table>
     <tr>

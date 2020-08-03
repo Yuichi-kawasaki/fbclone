@@ -12,20 +12,13 @@
 <% end %>
 
 <%= form.text_area :content, class:'form_control', rows: 10, placeholder: "コメントを書く"%>
-  <div class="image">
-     <div class="blog-create">
-        <%= form.label :image %><br>
-        <%= form.file_field :image %>
-        <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-        <%= form.hidden_field :image_cache %>
-     </div>
-     <div class="blog-create">
-        <% if action_name == 'edit' || action_name == 'confirm' %>
-          <p><%= form.check_box :remove_image %>画像削除</p>
-        <% end %>
-      </div>
-   </div>
-
+<div class="image">
+  <%if @picture.image.url.present?%>
+    <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+  <%end%>
+    <%= form.file_field :image, class:"image_upload" %>
+    <%= form.hidden_field :image_cache %>
+</div>
 
 
 

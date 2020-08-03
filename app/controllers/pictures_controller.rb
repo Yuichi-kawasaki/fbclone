@@ -38,7 +38,7 @@ class PicturesController < ApplicationController
     if @picture.update(picture_params)
       redirect_to pictures_path, notice: "投稿を編集しました！"
     else
-      ender :edit
+      render :edit
     end
   end
 
@@ -54,6 +54,11 @@ class PicturesController < ApplicationController
   end
 
   private
+
+  def set_picture
+    @picture = Picture.find(params[:id])
+  end
+
   def picture_params
     params.require(:picture).permit(:content, :image, :image_cache)
   end

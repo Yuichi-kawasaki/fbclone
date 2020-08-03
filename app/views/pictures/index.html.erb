@@ -19,7 +19,11 @@
       <% @pictures.each do |picture| %>
       <div class="post_content">
         <div class="picture_name">
-
+          <% if picture.user.image.present? %>
+            <%= image_tag(picture.user.image.url, :size => "50x50") %>
+          <% else %>
+             <%= image_tag("default.png", :size => "50x50") %>
+          <% end %>
           <span class="user_name"><%= picture.user.name %></span>
           <span class="created_time"><%= picture.created_at %></span>
         </div>
@@ -32,16 +36,16 @@
 
       <div class="post_nav">
         <%= link_to picture_path(picture.id), method: :get do %>
-            <i class="fa fa-info-circle"></i>
+            <i class="fa fa-info-circle">新規投稿</i>
         <% end %>
         <%= link_to edit_picture_path(picture.id), method: :get do %>
-            <i class="fa fa-edit"></i>
+            <i class="fa fa-edit">写真投稿の編集</i>
         <% end %>
         <%= link_to picture_path(picture.id), data: { confirm: 'Are you sure?' }, method: :delete do %>
-            <i class="fa fa-trash"></i>
+            <i class="fa fa-trash">写真投稿の消去</i>
         <% end %>
       </div>
-      </div>
+    </div>
     <% end %>
   </article>
 </div>

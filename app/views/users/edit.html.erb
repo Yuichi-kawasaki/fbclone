@@ -19,7 +19,11 @@
 <%= form_with(model: @user, local: true ) do |f| %>
 
 <div class="image_small">
-
+  <% if @user.image.present? %>
+   <p><%= image_tag(@user.image.url, :size => "50x50") %></p>
+  <% else %>
+   <p><%= image_tag("default.png", :size => "50x50") %></p>
+  <% end %>
   <%= f.file_field :image, class:"image_upload" %>
   <%= f.hidden_field :image_cache %>
 </div>
