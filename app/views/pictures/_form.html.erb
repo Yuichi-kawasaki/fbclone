@@ -1,0 +1,40 @@
+<%= form_with(model: @picture, local: true, url:choose_new_or_edit) do |form| %>
+
+<% if @picture.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @picture.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form.text_area :content, class:'form_control', rows: 10, placeholder: "コメントを書く"%>
+  <div class="image">
+     <div class="blog-create">
+        <%= form.label :image %><br>
+        <%= form.file_field :image %>
+        <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+        <%= form.hidden_field :image_cache %>
+     </div>
+     <div class="blog-create">
+        <% if action_name == 'edit' || action_name == 'confirm' %>
+          <p><%= form.check_box :remove_image %>画像削除</p>
+        <% end %>
+      </div>
+   </div>
+
+
+
+
+<div class="submit">
+  <%= form.submit "登録する", class:"button" %>
+</div>
+
+<div class="navbar">
+  <%= link_to "投稿一覧画面にもどる", pictures_path %>
+</div>
+
+<% end %>

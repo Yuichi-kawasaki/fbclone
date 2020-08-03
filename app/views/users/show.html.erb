@@ -1,0 +1,25 @@
+<% content_for :title do %>
+  <div class="clearfix profile_bar">
+    <div class="profile_name"><%= @user.name %>のページ</div>
+  </div>
+<% end %>
+<div class="profile_content">
+  <table>
+    <tr>
+      <th>メールアドレス:</th><td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th>誕生日:</th><td><%= @user.birthday %></td>
+    </tr>
+    <tr>
+      <th>性別:</th><td><%= gender_view(@user.gender) %></td>
+    </tr>
+  </table>
+</div>
+
+<% if logged_in? %>
+  <%= link_to "編集する", edit_user_path(current_user), class:'button login' %>
+  <%= link_to "投稿一覧画面へ", pictures_path, class:'button login' %>
+<% else %>
+  <%= link_to "ログインする", new_session_path, class:"button login" %>
+<% end %>

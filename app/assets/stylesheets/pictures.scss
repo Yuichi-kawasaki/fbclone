@@ -1,0 +1,111 @@
+
+.timeline {
+  width: 100%;
+  height: 10000px;
+  padding: 0 100px;
+  margin-top: 50px;
+}
+
+
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.post_content {
+ margin: 10px;
+ padding: 10px;
+ width: 100%;
+ color: #666666;
+ background-color: #f7f7f7;
+ border: 2px solid #ccc;
+ border-radius: 8px;
+}
+
+.post_nav {
+  height: 40px;
+  float: right;
+}
+
+.picture_name {
+  text-align: left;
+  height: 43px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.picture_content {
+  height: 150px;
+  word-wrap: break-word;
+  margin-bottom: 15px;
+}
+
+.picture_image {
+
+  margin-bottom: 15px;
+}
+.picture_image img{
+width: 60%;
+height: 60%;
+}
+
+
+
+
+.form_control {
+  width: 450px;
+  margin-bottom: 30px;
+}
+
+.text {
+
+  margin-bottom: 30px;
+  width: 450px;
+  height: 250px;
+  margin: 1em 0;
+  padding: 1em;
+  border: 2px solid #444;
+}
+
+.title {
+
+  top: 2rem;
+  left: 20px;
+  font-weight: bold;
+  font-size: 1.2em;
+  background: #fff;
+  padding: 0 0.5em;
+}
+
+.image {
+  margin-bottom: 30px;
+
+}
+.image img{
+  width: 350px;
+  height: 300px;
+}
+
+.submit {
+  margin-bottom: 30px;
+  width: 450px;
+}
+
+.navbar {
+  width: 450px;
+}
+
+i {
+  display: inline-block;
+  margin:10px;
+}
+
+.link_to_new {
+  font-size: 20px;
+}
+
+.created_time {
+  float: right;
+  font-size: 15px;
+}

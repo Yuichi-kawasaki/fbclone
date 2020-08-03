@@ -1,0 +1,96 @@
+
+.gender_parent {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.gender_select {
+  width: 100%;
+  text-align: left;
+}
+
+.input-group-addon {
+  width: auto;
+  margin: auto;
+  display: table-cell;
+}
+
+.birthday {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.birthday_select, label {
+  text-align: left;
+}
+
+#error_explanation {
+  h2 {
+    text-align: center;
+    background-color: transparent;
+    color: #a94442;
+    font-weight: bold;
+  }
+}
+
+.profile_bar {
+  width: 100%;
+}
+
+.profile_content {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.profile_icon {
+  float: left;
+}
+
+.profile_name {
+  float: right;
+  font-size: 50px;
+}
+
+table{
+  width: 70%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table tr{
+  border-bottom: solid 2px white;
+}
+
+table tr:last-child{
+  border-bottom: none;
+}
+
+table th{
+  position: relative;
+  text-align: left;
+  width: 30%;
+  background-color: rgba(132, 147, 149, 0.27);
+  color: rgb(61, 62, 57);
+  text-align: center;
+  padding: 10px 0;
+}
+
+table th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  right:-10px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+table td{
+  text-align: left;
+  width: 70%;
+  text-align: center;
+  background-color: rgba(#b6eef2, 0.39);
+  padding: 10px 0;
+}

@@ -1,0 +1,54 @@
+<% content_for :title do %>
+<h1>編集する</h1>
+<% end %>
+<% if @user.errors.any? %>
+  <% content_for :error do %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        <h2><%= pluralize(@user.errors.count, "件") %>のエラーがあります。<%= @user.name %></h2>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%= form_with(model: @user, local: true ) do |f| %>
+
+<div class="image_small">
+
+  <%= f.file_field :image, class:"image_upload" %>
+  <%= f.hidden_field :image_cache %>
+</div>
+  <%= f.text_field :UserName, placeholder: 'お名前', class: "form-control has-error" %>
+  <%= f.email_field :email, placeholder: 'メールアドレス', class: "form-control has-error" %>
+  <%= f.password_field :password, placeholder: 'パスワード' %><br>
+  <div class="birthday">
+  <%= f.label :birthday, "お誕生日", class:'control-label' %><br>
+  <%= raw sprintf(
+            f.date_select(
+              :birthday,
+              use_month_numbers: true,
+              start_year: 1930,
+              end_year: (Time.now.year - 18),
+              default: Date.new(1989, 1, 1),
+              date_separator: '%s'),
+              '年 ', '月 ') + '日生まれ' %>
+  </div>
+
+  <div class= "gender_parent">
+    <%= f.label :gender, "性別", class:'gender_select', class: "control-label" %><br>
+    <span><%= f.radio_button :gender, 1, class:"input-group-addon has-error" %></span>
+    <span><%= f.label :gender, "男", class:"input-group-addon has-error" %></span>
+    <span><%= f.radio_button :gender, 2, class:"input-group-addon has-error" %></span>
+    <span><%= f.label :gender, "女", class:"input-group-addon has-error" %></span>
+    <span><%= f.radio_button :gender, 3, class:"input-group-addon has-error" %></span>
+    <span><%= f.label :gender, "カスタム", class:"input-group-addon has-error" %></span>
+  </div>
+    <%= f.submit "編集する", class:'button' %>
+<% end %>
+
+  <%= link_to "投稿一覧画面にもどる", pictures_path, class:'button login' %>
