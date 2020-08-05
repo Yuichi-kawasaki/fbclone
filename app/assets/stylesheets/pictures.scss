@@ -25,6 +25,7 @@
 .post_nav {
   height: 40px;
   float: right;
+
 }
 
 .picture_name {
@@ -50,7 +51,17 @@ width: 60%;
 height: 60%;
 }
 
+form.button_to{
+  margin-left: 15%;
 
+}
+
+button{
+  background-color:rgba(64, 203, 184, 0.19);
+  float:left;
+  height:10%;
+  width: 25%;
+}
 
 
 .form_control {
@@ -98,7 +109,6 @@ height: 60%;
 
 i {
   display: inline-block;
-  margin:10px;
 }
 
 .link_to_new {

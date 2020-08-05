@@ -9,7 +9,7 @@ class User < ApplicationRecord
   before_validation { email.downcase! }
   has_secure_password
   validates :password, presence: true, length: { minimum: 8 }, on: :create
-  has_many :pictures
+  has_many :pictures, dependent: :destroy
 
   mount_uploader :image, IconUploader
 

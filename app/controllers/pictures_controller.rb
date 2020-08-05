@@ -38,7 +38,7 @@ class PicturesController < ApplicationController
     if @picture.update(picture_params)
       redirect_to pictures_path, notice: "投稿を編集しました！"
     else
-      render :edit
+      ender :edit
     end
   end
 
