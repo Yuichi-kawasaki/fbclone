@@ -1,0 +1,16 @@
+<% content_for :title do %>
+  <h1>コメント</h1>
+<% end %>
+
+<div class="text">
+  <div class="title">本文</div>
+  <%= @picture.content %>
+</div>
+<div class="image">
+  <%= image_tag @picture.image.url %>
+</div>
+
+<div class="submit">
+  <%= link_to '編集する', edit_picture_path(@picture), class:"button" %>
+  <%= link_to '戻る', pictures_path, class:"button" %>
+</div>
