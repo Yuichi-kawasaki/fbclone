@@ -6,7 +6,6 @@ class PicturesController < ApplicationController
   end
 
   def show
-
   end
 
   def new
