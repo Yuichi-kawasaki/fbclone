@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   resources :pictures do
     member do
       post :confirm
-
-       patch :confirm
+      patch :confirm
     end
   end
 end
