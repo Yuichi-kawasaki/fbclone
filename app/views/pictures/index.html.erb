@@ -35,7 +35,7 @@
         </div>
 
       <div class="post_nav">
-        <%= link_to '新規投稿', picture_path(picture.id), method: :get %>
+        <%= link_to '新規投稿', new_picture_path(picture.id), method: :get %>
 
         <%= link_to '写真投稿の編集', edit_picture_path(picture.id), method: :get  %>
 

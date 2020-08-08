@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update]
 
   resources :pictures do
-    member do
+    collection do
       post :confirm
+    end
+    member do
       patch :confirm
     end
   end
