@@ -18,6 +18,7 @@ module Fb
       g.assets false
       g.helper false
     end
+
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,
