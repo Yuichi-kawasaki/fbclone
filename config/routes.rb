@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       patch :confirm
     end
   end
-
+  resources :conversations do
+    resources :messages
+  end
   get 'relationships/create'
   get 'relationships/destroy'
 end
